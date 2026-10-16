@@ -1,0 +1,18 @@
+name = "Brew Break"
+
+# Every Python file the app imports must be listed here so PyScript can download it.
+[files]
+"./data.py" = "./data.py"
+"./state.py" = "./state.py"
+"./cart.py" = "./cart.py"
+"./dialogs.py" = "./dialogs.py"
+"./views_browse.py" = "./views_browse.py"
+"./orders.py" = "./orders.py"
+"./payments.py" = "./payments.py"
+"./views_checkout.py" = "./views_checkout.py"
+"./views_drink.py" = "./views_drink.py"
+"./auth.py" = "./auth.py"
+"./avatars.py" = "./avatars.py"
+"./views_account.py" = "./views_account.py"
+"./views_info.py" = "./views_info.py"
+"./seo.py" = "./seo.py"

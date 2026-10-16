@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Local secrets (this project has none, but never commit them)
+.env
+*.key
+# Dependencies, if a tool is ever added
+node_modules/
