@@ -12,7 +12,7 @@ Rehearse with the real site open at http://localhost:8000. Do not describe anyth
 | 10:30-12:00 | **5. Each member's contribution** | One slot per member: [Name] - [what they built, which files, a commit or screenshot as proof]. Do not claim work that is not in the repository history. |
 
 ## Checklist before recording
-- [ ] Promotional video file added, 30-60 seconds, plays on the Home page
+- [x] Promotional video file added (50 s), plays on the Home page
 - [ ] Every member can explain at least one handler
 - [ ] Repository history shows each member's commits
 - [ ] Screen recording at 1080p, microphone checked

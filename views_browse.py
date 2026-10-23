@@ -90,7 +90,7 @@ def footer_html():
     where = (esc(BIZ["address"]) + ", " + esc(BIZ["city"])) if BIZ["address"] else esc(BIZ["city"])
     return f'''<div class="wrap foot"><div class="fb"><a class="logo" href="#/home" aria-label="Brew Break home"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#bb-mark"/></svg><span class="wm"><span>Brew</span><span>Break</span></span></a>
 <p>Good-tasting drinks. Student-friendly prices. Your perfect break.</p></div>
-<nav aria-label="Explore"><h3>Explore</h3><a href="#/home">Home</a><a href="#/menu">Menu</a><a href="#/about">About and contact</a><a href="#/rewards">Rewards</a><a href="#/vouchers">Vouchers</a></nav>
+<nav aria-label="Explore"><h3>Explore</h3><a href="#/home">Home</a><a href="#/menu">Menu</a><a href="#/rewards">Rewards</a><a href="#/vouchers">Vouchers</a></nav>
 <div><h3>Visit</h3><ul><li>{where}</li>{hours}</ul><a class="lnk" href="mailto:{esc(BIZ["email"])}">{esc(BIZ["email"])}</a></div>
 <nav aria-label="Legal"><h3>Legal</h3><a href="#/privacy">Privacy</a><a href="#/terms">Terms</a></nav></div>
 <p class="wrap fine foot-note">© 2026 Brew Break. A student project: payments and order tracking on this site are simulated.</p>'''

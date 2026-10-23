@@ -29,7 +29,7 @@ import views_info
 from data import D
 from state import M, S, esc, guest_wallet, icon, later, q, toast
 
-NAV = [("home", "Home", "home"), ("menu", "Menu", "menu"), ("about", "About", "info"), ("live", "Orders", "live"),
+NAV = [("home", "Home", "home"), ("menu", "Menu", "menu"), ("live", "Orders", "live"),
        ("rewards", "Rewards", "gift"), ("vouchers", "Vouchers", "ticket")]
 VIEWS = {"home": lambda arg: vb.home(), "menu": vb.menu, "drink": views_drink.drink_page,
          "checkout": views_checkout.checkout, "live": lambda arg: orders.live(),

@@ -76,7 +76,7 @@ a free-drink voucher from stamps); checkout with pickup time and validation; a s
 a demonstration order status page; accounts stored in the browser; Rewards; About, contact and visit details.
 
 ## Status and known gaps
-- **Promotional video: not added yet.** Home shows a labelled placeholder. Add a 30-60 second MP4 (see `assets/README.txt`).
+- **Promotional video: added** (`assets/brew-break-promo.mp4`, 50 seconds, with a poster frame). Captions (`.vtt`) are still optional and not written yet.
 - **Product photos: not added yet.** Cards use icon tiles. Photos can be embedded through `PHOTOS` in `data.py`.
 - No backend, no real payment, no live tracking. Everything is saved in the visitor's own browser.
 - Tested with plain-Python tests and a headless browser on rendered pages; the live PyScript app still needs a manual click-through.

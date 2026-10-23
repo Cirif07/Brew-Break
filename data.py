@@ -280,7 +280,6 @@ PHOTOS = {}
 NORM_PAY = {"gcash": "cashless", "maya": "cashless", "cash": "cart"}
 
 # Promotional video shown on the Home page (assignment: 30-60 seconds, played on the page itself).
-# NO VIDEO HAS BEEN SUPPLIED YET, so "src" is empty and Home shows a clearly labelled placeholder.
-# To finish: put the file in the assets folder (see assets/README.txt) and set "src", e.g. "assets/brew-break-promo.mp4".
-# Optional: "poster" (image shown before play) and "captions" (a .vtt subtitle file) for accessibility.
-PROMO = {"src": "", "type": "video/mp4", "poster": "", "captions": "", "title": "Brew Break promotional video"}
+# The 50-second promo is in the assets folder. Set "src" to "" to bring back the labelled placeholder.
+# Optional: "captions" (a .vtt subtitle file) for accessibility - none has been written yet.
+PROMO = {"src": "assets/brew-break-promo.mp4", "type": "video/mp4", "poster": "assets/brew-break-poster.jpg", "captions": "", "title": "Brew Break promotional video"}

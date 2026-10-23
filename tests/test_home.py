@@ -1,5 +1,6 @@
 import os, sys
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
 import sys, types, re, ast
 from unittest.mock import MagicMock
 # ---- minimal fake browser so the project's own modules import and run in plain Python
@@ -33,13 +34,16 @@ for cid,(cn,items) in OFF.items():
     chk(cur==items,f"{cn}: {len(cur)} items match names+prices exactly, in order")
     chk([c['n'] for c in data.CATS if c['id']==cid]==[cn],f"category name '{cn}'")
 chk([c['id'] for c in data.CATS]==list(OFF),"category order")
-# ---- homepage render, placeholder mode
+# ---- homepage render, placeholder mode (the real promo is configured, so blank it for this check)
+_promo=dict(data.PROMO); data.PROMO["src"]=""
 html=vb.home()
 chk('<video' not in html and 'id="promo-ph"' in html and 'Promotional video placeholder' in html,"no video file -> placeholder shown, no fake <video>")
 tabs=re.findall(r'data-act="hcat" data-c="(\w+)"',html); chk(tabs==list(OFF),"5 homepage category tabs")
 chk(all(n in html for n,_ in OFF["mt"][1]),"default grid (Milk Tea) shows its 4 official items")
 chk("Brew Break" in html and 'href="#/menu"' in html,"brand name + menu CTA present")
 # ---- video mode
+data.PROMO.update(_promo)
+chk(data.PROMO["src"].endswith(".mp4") and os.path.exists(os.path.join(ROOT,data.PROMO["src"])) and os.path.exists(os.path.join(ROOT,data.PROMO["poster"])),"configured promo and poster files exist in assets")
 data.PROMO.update(src="assets/brew-break-promo.mp4",captions="assets/c.vtt",poster="assets/p.jpg"); vb.PROMO=data.PROMO
 p=vb.promo_section(); chk(all(t in p for t in ['<video id="promo" controls','<source src="assets/brew-break-promo.mp4"','kind="captions"','playsinline','poster=']) and 'promo-ph' not in p,"with src: accessible <video controls> + captions track + poster, no placeholder")
 # ---- PyScript handler: category tab click
